@@ -1,0 +1,29 @@
+body{
+
+
+  font-family:Helvetica;
+  text-align:center
+
+}
+
+h1{
+
+  background-color: #666;
+  padding:30px;
+  text-align: center;
+  font-size:35px;
+  color:white;
+}
+h2{
+
+  color:navy;
+  background-color:yellow;
+  padding:1px;
+}
+.youtube{
+font-family:serif;
+  text-align:center;
+  color:white;
+  padding:15px;
+  background-color:tomato;
+}
