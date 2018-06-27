@@ -3,13 +3,23 @@
 
   <head>
   <title> My First Webpage </title>
+  <meta charset="utf-8">
   <link rel="stylesheet" href="main.css">
 
   </head>
   <body>
     <h1> This is My Page</h1>
     <h2> heading size can be adjusted from h1 to h6</h2>
-
+    <input type="button" value="night" onclick="
+    document.querySelector('body').style.backgroundColor='black';
+    document.querySelector('body').style.color='white';
+    document.querySelector('body').style.textAlign='left';
+    ">
+    <input type="button" value="day" onclick="
+    document.querySelector('body').style.backgroundColor='white';
+    document.querySelector('body').style.color='black';
+    document.querySelector('body').style.textAlign='right';
+    ">
     <p title="Welcome to my First WebPage"> <strong>Welcome</strong>
        To my <del>Second</del>First WebPage!!! </br> This is how you break a line
      </p>

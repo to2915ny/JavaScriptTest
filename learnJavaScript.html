@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<style>
+  /*style 이라는 태그안에서 클래스 js를 바꿔준다.
+  Class를 설정할때는 class 앞에 .을 찍어준다.*/
+  .js{
+    color:powderblue;
+    font-weight:bold;
+    font-family:cursive;
+  }
+  /*id를 설정해줄땐 #을 설정해준다.*/
+  #name{
+    color:green;
+    font-style: italic;
+  }
+
+</style>
+  <head>
+    <title> Let's Learn JavaScript </title>
+    <meta charset = "utf-8" >
+    <script>
+/*Function을 만들어서 조금더 간단하고 readability를 향상시킬수잇다. 모둘화*/
+    function nightAndDay(self){
+      var target = document.querySelector('body');
+      if(self.value == 'night'){
+        target.style.backgroundColor='black';
+      target.style.color='white';
+      self.value = 'day'
+      }
+      else{
+        target.style.backgroundColor='white';
+        target.style.color='black';
+        self.value= 'night';
+      }
+
+    }
+    </script>
+
+  </head>
+  <body>
+
+    <h1 style ="background-color:coral">JavaScript</h1>
+
+    <!--The basic code document.write 1+1같이 숫자는 더해서 출력해주고 반대로 html에선 그냥
+    출력해준다.-->
+    <script>
+    document.querySelector('body').dataset.mode = 'day';
+    document.write(1+1+"<br>");
+
+    document.write("Hello World");
+    </script>
+    <!--document. function은 html 안에있는 데이터를 처리해준다. document.querySelector는 해당
+    태그에 관한 style이나 여러가지 를 처릴 할수있다.-->
+        <p>1+1</p>
+    <!-- Event에대해서
+    input type button =버튼을 생성 시켜준다.value=hi 버튼에 이름은 hi onclick="alert('hi')"
+    hi 버튼을 눌렸을때 alert창이뜬다.-->
+    <input type="button" value="hi" onclick="alert('hi')">
+    <!-- type을 text으로 정해주면 입력할수있는 박스가 생긴다. onchange 옵션은 박스안에 밸류가
+    바뀌어졌을때 'changed' 라는 메시지가 alert창으로 뜬다.-->
+    <input type="text" onchange="alert('changed')">
+    <!--이렇게 여러가지 이벤트 type들과 option들이 존재한다.-->
+
+    <p><span id="name" class="js">JavaScript</span> (/ˈdʒɑːvəˌskrɪpt/),[6] often abbreviated as JS, is a high-level,
+      interpreted programming language. It is a language which is also characterized as dynamic,
+      weakly typed, prototype-based and multi-paradigm.
+Alongside HTML and CSS, <span class="js">JavaScript</span> is one of the three core technologies of the World Wide Web.[7]
+JavaScript enables interactive web pages and thus is an essential part of web applications.
+ The vast majority of websites use it,[8] and all major web browsers have a dedicated JavaScript engine to execute it.
+</p>
+
+<h2>The if function </h2>
+<!--Using if function in javaScript-->
+<!--Make a variance and put document.querySelector('body')
+This way your code becomes concise and clear -->
+<!--
+<input type="button" value="night" onclick="
+if(document.querySelector('body').dataset.mode == 'day'){
+document.querySelector('body').style.backgroundColor='black';
+document.querySelector('body').style.color='white';
+document.querySelector('body').style.textAlign='left';
+document.querySelector('body').dataset.mode = 'night';
+this.value = 'day'
+}
+else{
+  document.querySelector('body').style.backgroundColor='white';
+  document.querySelector('body').style.color='black';
+  document.querySelector('body').style.textAlign='right';
+  document.querySelector('body').dataset.mode = 'day';
+  this.value= 'night';
+}
+">
+-->
+<!--A much more simpler way to make a toggle written below-->
+<!--
+<input type="button" value="night" onclick="
+if(this.value == 'night'){
+document.querySelector('body').style.backgroundColor='black';
+document.querySelector('body').style.color='white';
+this.value = 'day'
+}
+else{
+  document.querySelector('body').style.backgroundColor='white';
+  document.querySelector('body').style.color='black';
+  this.value= 'night';
+}
+">
+-->
+
+<h2> Array and Loop </h2>
+<script>
+var job = ['programmer','dentist','plumber'];
+  //variable job becomes an array
+  //document.write(job[0] );
+
+</script>
+
+<script>
+  var i =0;
+  document.write('<li>1</li>');
+  while(i<3){ //use While to repeat something
+  document.write('<li>2</li>');
+  i=i+1;
+}
+  document.write('<li>3</li>');
+  document.write('<li>4</li>');
+</script>
+<br>
+<script>
+var n =0;
+while(n<3){
+  document.write('<li>'+job[n]+'</li>');
+  n=n+1;
+}
+</script>
+<br>
+<h2> Function</h2>
+
+<h4>To declare a function something(){} </h4>
+
+<script>
+function onePlusOne(){
+  //declare function onePlusOne();
+  document.write(1+1+'<br>');
+}
+onePlusOne();
+
+
+</script>
+<input type="button" value="night" onclick="
+nightAndDay(this);
+">
+<!--function 을 통해 이렇게 간단하게 표현할수있다.-->
+
+<h2>Object</h2>
+<h3>Create</h3>
+<script>
+
+var coworkers = { //Object는 {}를 쓰고 Array는 []를 쓴다.
+  "programmer" : "minyoung",
+  "programmer1" : "jaewon",
+  "programmer3" : "hyewon"
+
+};
+document.write("Programer is " + coworkers.programmer +"<br>");
+document.write("Programer is " + coworkers.programmer1 +"<br>");
+coworkers.jack = "kevin";
+coworkers["cool guy"] = "john";
+document.write(coworkers.jack + "<br>");
+document.write(coworkers["cool guy"]+ "<br>");
+//이렇게 오브젝트들을 출력하고 오브젝트들을 추가할수있다.
+//오브젝트들은 배열과 비슷하지만 각 배열 마다 이름(키 값)이 있다.
+
+//for interate
+
+for(var key in coworkers){ //coworkers에 있는 키값들을 가져온다.
+  document.write(key+ ' : ' +coworkers[key]+"<br>");
+}
+
+</script>
+
+  </body>
+
+</html>

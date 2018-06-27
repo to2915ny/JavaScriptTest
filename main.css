@@ -2,7 +2,10 @@ body{
 
 
   font-family:Helvetica;
-  text-align:center
+  text-align: right;
+  /*background-color:black;*/
+  color: white;
+  background-color: black;
 
 }
 
